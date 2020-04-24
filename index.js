@@ -1,10 +1,18 @@
-getUser(1, (user) => {
-    getRepos(user.gitHubUserName, (repos) => {
-        getCommits(repos[0], (commits) => {
-            console.log(commits);
-        });
-    });
-});
+getUser(1, getRepositories);
+
+// starting from the innermost anonymous function
+
+
+function getRepositories(user) {
+    getRepos(user.gitHubUserName, getCommits);
+}
+function getCommits(repos) {
+    getCommits(repos[0], displayCommits);
+}
+function displayCommits(commits) {
+    console.log(commits);
+}
+
 
 function getUser(id, callback) {
     setTimeout(() => {
