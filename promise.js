@@ -5,7 +5,7 @@ const p = new Promise((resolve, reject) => {
             age: 22,
             height: 6 + 'ft ' + 4 + 'in'
         }); // pending => resolved, fulfilled
-        // reject(new Error('This is bad')); // pending => rejected
+        reject(new Error('This is bad')); // pending => rejected
     }, 2000);
 });
 
