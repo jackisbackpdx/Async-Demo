@@ -1,12 +1,12 @@
 console.log('Before');
 // Used named functions to make code more readable
-// getUser(1, (user) => {
-//     getRepositories(user.gitHubUsername, (repos) => {
-//         getCommits(repos[0], (commits) => {
-//             console.log(commits);
-//         });
-//     });
-// });
+getUser(1, (user) => {
+    getRepositories(user.gitHubUsername, (repos) => {
+        getCommits(repos[0], (commits) => {
+            console.log(commits);
+        });
+    });
+});
 
 // Promise based Approach
 // getUser(1)
